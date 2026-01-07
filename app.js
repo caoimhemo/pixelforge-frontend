@@ -1,12 +1,6 @@
 // =====================
-// 1) SET YOUR ENDPOINTS
+// 1) ENDPOINTS
 // =====================
-// These should be your Logic App callback URLs.
-// Because you're using Consumption Logic Apps, you’ll call them like:
-// - GETALL:  <url>
-// - CREATE:  <url>   (multipart form-data)
-// - UPDATE:  <url>?id=POST_ID
-// - DELETE:  <url>?id=POST_ID
 
 const ENDPOINTS = {
   GET_ALL: "https://prod-14.germanywestcentral.logic.azure.com:443/workflows/df807c42e6084edaaf3eabfd695f8eda/triggers/When_an_HTTP_request_is_received/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2FWhen_an_HTTP_request_is_received%2Frun&sv=1.0&sig=Jkx7haI9yt9EC4n4huAvT3umBZ-9njb3323497C2UGw",
@@ -276,3 +270,4 @@ feed.addEventListener("click", async (ev) => {
 
 // initial hint view
 ensureConfigured();
+
