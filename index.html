@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>PixelForge</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <img class="logo" src="assets/pixelforge-logo.png" alt="PixelForge logo" />
+        <div>
+          <h1>PixelForge</h1>
+          <p class="subtitle">Share clips, screenshots, and game reviews.</p>
+        </div>
+      </div>
+
+      <div class="endpoints">
+        <button id="btnRefresh" class="btn btn-secondary">Refresh</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <!-- Left: Upload + Update -->
+      <section class="panel">
+        <h2>Upload a post</h2>
+        <form id="uploadForm" class="form">
+          <label>
+            User ID
+            <input name="userID" placeholder="U001" required />
+          </label>
+
+          <label>
+            Username
+            <input name="userName" placeholder="Caoimhe" required />
+          </label>
+
+          <label>
+            Game title
+            <input name="gameTitle" placeholder="Valorant" />
+          </label>
+
+          <label>
+            Description
+            <input name="description" placeholder="Final circle clutch win!" />
+          </label>
+
+          <label>
+            Tags (comma separated)
+            <input name="tags" placeholder="valorant, clutch, ranked" />
+          </label>
+
+          <label>
+            File name (optional)
+            <input name="FileName" placeholder="myclip.png" />
+          </label>
+
+          <label>
+            File (image/video)
+            <input name="File" type="file" accept="image/*,video/*" required />
+          </label>
+
+          <button class="btn btn-primary" type="submit">Upload</button>
+          <p id="uploadStatus" class="status"></p>
+        </form>
+
+        <hr class="divider" />
+
+        <h2>Update a post</h2>
+        <form id="updateForm" class="form">
+          <label>
+            Post ID (required)
+            <input name="id" placeholder="paste the post id here" required />
+          </label>
+
+          <label>
+            Game title (optional)
+            <input name="gameTitle" placeholder="Apex Legends" />
+          </label>
+
+          <label>
+            Description (optional)
+            <input name="description" placeholder="Updated description..." />
+          </label>
+
+          <label>
+            Tags (comma separated, optional)
+            <input name="tags" placeholder="apex, win, ranked" />
+          </label>
+
+          <button class="btn btn-secondary" type="submit">Update</button>
+          <p id="updateStatus" class="status"></p>
+        </form>
+      </section>
+
+      <!-- Right: Feed -->
+      <section class="panel">
+        <div class="panel-head">
+          <h2>Latest posts</h2>
+          <div class="hint">
+            <span class="pill">GET</span>
+            <code id="getAllHint">configure endpoints in app.js</code>
+          </div>
+        </div>
+
+        <div id="feed" class="feed">
+          <div class="skeleton">No data yet. Click Refresh after you set endpoints.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>PixelForge • Azure Logic Apps + Cosmos DB + Blob Storage</small>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
